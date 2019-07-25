@@ -1,0 +1,112 @@
+{
+    "title": "Your Guide to Dubai",
+    "forecolor": "black",
+    "backcolor": "white",
+    "categories": [
+       
+        {
+            "title": "Restaurants",
+            "css": "optional",
+            "items": [
+                {
+                    "text": "Al Dawaar Revolving Restaurant\nHyatt Regency Dubai - 25th - Al Khaleej Rd - Dubai - United Arab Emirates",
+                    "order": "0"
+                },
+                {
+                    "text": "The Talk Restaurant\nThe Walk at Jumeirah Beach Residence - Dubai - United Arab Emirates",
+                    "order": "1"
+                },
+                {
+                    "text": "Indego by Vineet\nGrosvenor House Dubai - Al Emreef St - Dubai - United Arab Emirates",
+                    "order": "2"
+                },
+                {
+                    "text": "Maiden Shanghai | Gourmet Chinese Restaurant with Karaoke & Private Dining Rooms\nNo 1 Palm Jumeirah Dubai - Dubai - United Arab Emirates",
+                    "order": "3"
+                },
+                {
+                    "text": "Armani / Ristorante\nBurj Khalifa - Lobby Level, Armani Hotel Dubai - Sheikh Mohammed bin Rashid Blvd - Dubai - United Arab Emirates",
+                    "order": "4"
+                },
+                {
+                    "text": "At.Mosphere\n122nd Floor, Burj Khalifa, Downtown Dubai - Dubai - United Arab Emirates",
+                    "order": "5"
+                }
+            ]
+        },
+        {
+            "title": "Parks",
+            "css": "optional",
+            "items": [
+                {
+                    "text": "Burj Park by Emaar\nBurj Khalifa Park - Dubai - United Arab Emirates",
+                    "order": "0"
+                },
+                {
+                    "text": "Dubai Garden Glow Now Close will open back in October\nZabeel Park, Gate No- 6 & 7 Area - B - Dubai - United Arab Emirates",
+                    "order": "1"
+                },
+                {
+                    "text": "Mushrif Park\nAl Khawaneej St - Dubai - United Arab Emirates",
+                    "order": "2"
+                },
+                {
+                    "text": "Zabeel Park\nZabeel Area, Near Al Jafiliya Metro Station - Dubai - United Arab Emirates",
+                    "order": "3"
+                },
+                {
+                    "text": "Al Barsha Pond Park\nOpp. Al Barsha Mall\u060c Al Barsha 2 - Dubai - United Arab Emirates",
+                    "order": "4"
+                },
+                {
+                    "text": "Dubai Butterfly Garden\nAl Barsha South 3, Dubailand Area, Beside Dubai Miracle Garden - Dubai - United Arab Emirates",
+                    "order": "5"
+                }
+            ]
+        },
+        {
+            "title": "Hikes",
+            "css": "optional",
+            "items": [
+                {
+                    "text": "Hatta Hiking\nDubai - United Arab Emirates",
+                    "order": "0"
+                },
+                {
+                    "text": "Desert Safari Dubai - Tribal Trails Tourism\nRolla Street - Dubai - United Arab Emirates",
+                    "order": "1"
+                }
+            ]
+        },
+        {
+            "title": "Historical Places",
+            "css": "optional",
+            "items": [
+                {
+                    "text": "Al Fahidi Historical District - \u062d\u064a \u0627\u0644\u0641\u0647\u064a\u062f\u064a \u0627\u0644\u062a\u0627\u0631\u064a\u062e\u064a\nDubai - United Arab Emirates",
+                    "order": "0"
+                },
+                {
+                    "text": "Al Fahidi Historical Neighbourhood\nDubai - United Arab Emirates",
+                    "order": "1"
+                },
+                {
+                    "text": "Wall of Old Dubai\n63 Al Faheide - Dubai - United Arab Emirates",
+                    "order": "2"
+                },
+                {
+                    "text": "Majlis Ghorfat Umm-Al Sheif\nDubai - United Arab Emirates",
+                    "order": "3"
+                },
+                {
+                    "text": "Dubai Museum\nOpp. Grand Mosque - Al Fahidi St - Dubai - United Arab Emirates",
+                    "order": "4"
+                },
+                {
+                    "text": "House of Sheikh Saeed Al Maktoum\nDubai - United Arab Emirates",
+                    "order": "5"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Information from Stack Overflow.",
+  "forecolor": "black",
+  "backcolor": "white",
+  "categories": [
+    {
+      "title": "C# string to int",
+      "items": [
+        {
+          "text": "<p>Try this:</p>\n\n<pre><code>int x = Int32.Parse(TextBoxD1.Text);\n</code></pre>\n\n<p>or better yet:</p>\n\n<pre><code>int x = 0;\n\nInt32.TryParse(TextBoxD1.Text, out x);\n</code></pre>\n\n<p>Also, since <a href=\"http://msdn.microsoft.com/en-us/library/f02979c7.aspx\" rel=\"noreferrer\"><code>Int32.TryParse</code></a> returns a <code>bool</code> you can use its return value to make decisions about the results of the parsing attempt:</p>\n\n<pre><code>int x = 0;\n\nif (Int32.TryParse(TextBoxD1.Text, out x))\n{\n    // you know that the parsing attempt\n    // was successful\n}\n</code></pre>\n\n<p>If you are curious, the difference between <code>Parse</code> and <code>TryParse</code> is best summed up like this:</p>\n\n<blockquote>\n  <p>The TryParse method is like the Parse\n  method, except the TryParse method\n  does not throw an exception if the\n  conversion fails. It eliminates the\n  need to use exception handling to test\n  for a FormatException in the event\n  that s is invalid and cannot be\n  successfully parsed. - <a href=\"http://msdn.microsoft.com/en-us/library/f02979c7.aspx\" rel=\"noreferrer\">MSDN</a></p>\n</blockquote>\n",
+          "order": 0
+        },
+        {
+          "text": "<p>It marks the string as a <a href=\"http://csharpindepth.com/Articles/General/Strings.aspx\" rel=\"noreferrer\">verbatim string literal</a> - anything in the string that would normally be interpreted as an <a href=\"http://en.wikipedia.org/wiki/Escape_sequence\" rel=\"noreferrer\">escape sequence</a> is ignored.</p>\n\n<p>So <code>\"C:\\\\Users\\\\Rich\"</code> is the same as <code>@\"C:\\Users\\Rich\"</code></p>\n\n<p>There is one exception: an escape sequence is needed for the double quote. To escape a double quote, you need to put two double quotes in a row. For instance, <code>@\"\"\"\"</code> evaluates to <code>\"</code>. </p>\n",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "title": "python 2 print",
+      "items": [
+        {
+          "text": "<p>In Python 2.7 (and before), <code>print</code> is a <em>statement</em> that takes a number of arguments. It prints the arguments with a space in between.</p>\n\n<p>So if you do</p>\n\n<pre><code>print \"box:\", box\n</code></pre>\n\n<p>It first prints the string \"box:\", then a space, then whatever <code>box</code> prints as (the result of its <code>__str__</code> function).</p>\n\n<p>If you do</p>\n\n<pre><code>print (\"box:\", box)\n</code></pre>\n\n<p>You have given <em>one</em> argument, a tuple consisting of two elements (\"box:\" and the object <code>box</code>).</p>\n\n<p>Tuples print as their representation (mostly used for debugging), so it calls the <code>__repr__</code> of its elements rather than their <code>__str__</code> (which should give a user-friendly message).</p>\n\n<p>That's the difference you see: <code>(The width is: 100, and the height is: 200)</code> is the result of your box's <code>__str__</code>, but <code>&lt;__main__.Rectangle instance at 0x0293BDC8&gt;</code> is its <code>__repr__</code>.</p>\n\n<p>In Python 3 and higher, <code>print()</code> is a normal function as any other (so <code>print(2, 3)</code> prints <code>\"2 3\"</code> and <code>print 2, 3</code> is a syntax error). If you want to have that in Python 2.7, put</p>\n\n<pre><code>from __future__ import print_function\n</code></pre>\n\n<p>at the top of your source file, to make it slightly more ready for the present.</p>\n",
+          "order": 0
+        },
+        {
+          "text": "<p>There are many ways to do this. To fix your current code using <code>%</code>-formatting, you need to pass in a tuple:</p>\n\n<ol>\n<li><p>Pass it as a tuple:</p>\n\n<pre><code>print(\"Total score for %s is %s\" % (name, score))\n</code></pre></li>\n</ol>\n\n<p>A tuple with a single element looks like <code>('this',)</code>.</p>\n\n<p>Here are some other common ways of doing it:</p>\n\n<ol start=\"2\">\n<li><p>Pass it as a dictionary:</p>\n\n<pre><code>print(\"Total score for %(n)s is %(s)s\" % {'n': name, 's': score})\n</code></pre></li>\n</ol>\n\n<p>There's also new-style string formatting, which might be a little easier to read:</p>\n\n<ol start=\"3\">\n<li><p>Use new-style string formatting:</p>\n\n<pre><code>print(\"Total score for {} is {}\".format(name, score))\n</code></pre></li>\n<li><p>Use new-style string formatting with numbers (useful for reordering or printing the same one multiple times):</p>\n\n<pre><code>print(\"Total score for {0} is {1}\".format(name, score))\n</code></pre></li>\n<li><p>Use new-style string formatting with explicit names:</p>\n\n<pre><code>print(\"Total score for {n} is {s}\".format(n=name, s=score))\n</code></pre></li>\n<li><p>Concatenate strings:</p>\n\n<pre><code>print(\"Total score for \" + str(name) + \" is \" + str(score))\n</code></pre></li>\n</ol>\n\n<p>The clearest two, in my opinion:</p>\n\n<ol start=\"7\">\n<li><p>Just pass the values as parameters:</p>\n\n<pre><code>print(\"Total score for\", name, \"is\", score)\n</code></pre>\n\n<p>If you don't want spaces to be inserted automatically by <code>print</code> in the above example, change the <code>sep</code> parameter:</p>\n\n<pre><code>print(\"Total score for \", name, \" is \", score, sep='')\n</code></pre>\n\n<p>If you're using Python 2, won't be able to use the last two because <code>print</code> isn't a function in Python 2. You can, however, import this behavior from <code>__future__</code>:</p>\n\n<pre><code>from __future__ import print_function\n</code></pre></li>\n<li><p>Use the new <code>f</code>-string formatting in Python 3.6:</p>\n\n<pre><code>print(f'Total score for {name} is {score}')\n</code></pre></li>\n</ol>\n",
+          "order": 0
+        }
+      ]
+    }
+  ]
+}
